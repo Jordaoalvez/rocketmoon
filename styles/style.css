@@ -33,7 +33,7 @@ a {
 }
 
 .hero {
-  background-image: url("./img/hero-section.webp");
+  background-image: url("../img/hero-section.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -232,7 +232,7 @@ footer {
 /* Path: roadmap.html */
 
 .roadmap {
-  background-image: url("/img/background-lua.webp");
+  background-image: url("../img/background-lua.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
