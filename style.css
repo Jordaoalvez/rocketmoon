@@ -13,7 +13,6 @@ body {
   padding: 30px 0px 30px 0px;
   margin: 0;
   width: 100%;
-  max-content: 100%;
 }
 
 ul {
@@ -90,7 +89,6 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
 }
 
 .linha-2 {
@@ -102,7 +100,6 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
 }
 
 .linha-3 {
@@ -114,7 +111,6 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
 }
 
 .hero-itens {
@@ -123,14 +119,15 @@ p {
 
 #missao {
   margin: 0;
-  padding: 130px;
+  padding: 80px;
   background-color: #020301;
-  padding-left: 188px;
+  padding-left: auto;
 }
 
 .section-text {
-  display: inline-block;
-  width: 33%;
+  padding-right: 80px;
+  grid-column: 1;
+  grid-row: 1 / 4;
 }
 
 .missao {
@@ -146,7 +143,6 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
 }
 
 h2 {
@@ -171,18 +167,17 @@ h3 {
 }
 
 .grid {
-  display: inline-block;
-  size: 33%;
+  display: grid;
+  gap: 30px;
+  max-width: 1140px;
+  grid-template-columns: 2fr 1fr 1fr;
+  margin: 0 auto;
 }
 
 .box {
   border: solid 2px #fdad00;
   display: inline-block;
   height: fit-content;
-  width: 19%;
-  margin-right: 30px;
-  margin-bottom: 30px;
-  margin-top: 30px;
   padding: 30px;
   border-radius: 10px;
   box-sizing: border-box;
@@ -207,6 +202,31 @@ footer {
 .icon {
   margin-right: 10px;
   margin-left: 10px;
+}
+
+/* Responsive Home */
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .section-text {
+    grid-column: 1 / 3;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .grid {
+    display: block;
+  }
+  .box {
+    margin-bottom: 30px;
+  }
+  #missao {
+    padding: 40px;
+  }
 }
 
 /* Path: roadmap.html */
@@ -238,7 +258,6 @@ footer {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
 }
 
 .titulo-secao h1 {
@@ -331,9 +350,6 @@ header p {
 
 .title-h3 span {
   color: rgba(253, 173, 0, 1);
-}
-
-.block:nth-child(odd) .title-h3 {
 }
 
 /* Path: equipe.html */
