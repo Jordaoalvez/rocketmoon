@@ -8,23 +8,48 @@ body {
 }
 
 .header {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #000200;
-  padding: 30px 0px 30px 0px;
   margin: 0;
-  width: 100%;
+  padding: 2rem 2rem;
+  height: 4rem;
 }
 
-ul {
-  margin: 0;
+.header-menu {
+  list-style: none;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.menu-bottom {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
+  gap: 0.4rem;
 }
 
-.menu-item {
+.menu-item a {
   font-weight: 300;
+  display: block;
+  padding: 1rem;
+  color: #f3f3f2;
+  text-decoration: none;
+}
+
+.label-menu,
+.checkbox {
+  display: none;
+}
+
+.menu-item-footer a {
   display: inline-block;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 1rem;
+  color: #f3f3f2;
+  text-decoration: none;
 }
 
 a {
@@ -204,7 +229,7 @@ footer {
   margin-left: 10px;
 }
 
-/* Responsive Home */
+/* Responsive Home Tablet */
 
 @media (max-width: 1100px) {
   .grid {
@@ -217,13 +242,88 @@ footer {
   }
 }
 
+/* Responsive Home Mobile */
+
+/* Responsive Menu */
+
 @media (max-width: 700px) {
+  .header-menu {
+    display: block;
+    position: absolute;
+    top: 4.6875rem;
+    left: 0;
+    padding: 0;
+    background: #000200;
+    text-align: center;
+    width: 100%;
+    height: 0;
+    z-index: 1;
+    transition: 0.5s;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+
+  .checkbox:checked ~ .header-menu {
+    height: calc(100vh - 4.6875rem);
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer {
+    border-top-color: transparent;
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer::before {
+    transform: rotate(135deg);
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer::after {
+    transform: rotate(-135deg);
+    top: -0.4375rem;
+  }
+
+  .menu-item a {
+    padding: 1rem 0;
+    margin-inline: 1rem;
+    border-bottom: 0.0625rem solid #f3f3f2;
+  }
+
+  .label-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #f3f3f2;
+    padding-block: 1rem;
+    cursor: pointer;
+  }
+
+  .hamburguer {
+    border-top: 0.125rem solid;
+    width: 1.125rem;
+  }
+
+  .hamburguer::before,
+  .hamburguer::after {
+    content: "";
+    display: block;
+    width: 1.25rem;
+    height: 0.125rem;
+    background: currentColor;
+    margin-top: 0.3125rem;
+    position: relative;
+    transition: 0.3s;
+  }
+
+  /* Continue responsive */
+
   .grid {
     display: block;
   }
+
   .box {
     margin-bottom: 30px;
   }
+
   #missao {
     padding: 40px;
   }
@@ -352,6 +452,79 @@ header p {
   color: rgba(253, 173, 0, 1);
 }
 
+/* Responsive Roadmap Mobile */
+
+/* Responsive Menu */
+
+@media (max-width: 700px) {
+  .header-menu {
+    display: block;
+    position: absolute;
+    top: 4.6875rem;
+    left: 0;
+    padding: 0;
+    background: #000200;
+    text-align: center;
+    width: 100%;
+    height: 0;
+    z-index: 1;
+    transition: 0.5s;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+
+  .checkbox:checked ~ .header-menu {
+    height: calc(100vh - 4.6875rem);
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer {
+    border-top-color: transparent;
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer::before {
+    transform: rotate(135deg);
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer::after {
+    transform: rotate(-135deg);
+    top: -0.4375rem;
+  }
+
+  .menu-item a {
+    padding: 1rem 0;
+    margin-inline: 1rem;
+    border-bottom: 0.0625rem solid #f3f3f2;
+  }
+
+  .label-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #f3f3f2;
+    padding-block: 1rem;
+    cursor: pointer;
+  }
+
+  .hamburguer {
+    border-top: 0.125rem solid;
+    width: 1.125rem;
+  }
+
+  .hamburguer::before,
+  .hamburguer::after {
+    content: "";
+    display: block;
+    width: 1.25rem;
+    height: 0.125rem;
+    background: currentColor;
+    margin-top: 0.3125rem;
+    position: relative;
+    transition: 0.3s;
+  }
+}
+
 /* Path: equipe.html */
 
 .equipe {
@@ -427,6 +600,79 @@ header p {
   text-transform: uppercase;
 
   color: rgba(243, 243, 242, 0.95);
+}
+
+/* Responsive Equipe Mobile */
+
+/* Responsive Menu */
+
+@media (max-width: 700px) {
+  .header-menu {
+    display: block;
+    position: absolute;
+    top: 4.6875rem;
+    left: 0;
+    padding: 0;
+    background: #000200;
+    text-align: center;
+    width: 100%;
+    height: 0;
+    z-index: 1;
+    transition: 0.5s;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+
+  .checkbox:checked ~ .header-menu {
+    height: calc(100vh - 4.6875rem);
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer {
+    border-top-color: transparent;
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer::before {
+    transform: rotate(135deg);
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer::after {
+    transform: rotate(-135deg);
+    top: -0.4375rem;
+  }
+
+  .menu-item a {
+    padding: 1rem 0;
+    margin-inline: 1rem;
+    border-bottom: 0.0625rem solid #f3f3f2;
+  }
+
+  .label-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #f3f3f2;
+    padding-block: 1rem;
+    cursor: pointer;
+  }
+
+  .hamburguer {
+    border-top: 0.125rem solid;
+    width: 1.125rem;
+  }
+
+  .hamburguer::before,
+  .hamburguer::after {
+    content: "";
+    display: block;
+    width: 1.25rem;
+    height: 0.125rem;
+    background: currentColor;
+    margin-top: 0.3125rem;
+    position: relative;
+    transition: 0.3s;
+  }
 }
 
 /* Path: contato.html */
@@ -528,6 +774,79 @@ header p {
   font-weight: 300;
 }
 
+/* Responsive Contato Mobile */
+
+/* Responsive Menu */
+
+@media (max-width: 700px) {
+  .header-menu {
+    display: block;
+    position: absolute;
+    top: 4.6875rem;
+    left: 0;
+    padding: 0;
+    background: #000200;
+    text-align: center;
+    width: 100%;
+    height: 0;
+    z-index: 1;
+    transition: 0.5s;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+
+  .checkbox:checked ~ .header-menu {
+    height: calc(100vh - 4.6875rem);
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer {
+    border-top-color: transparent;
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer::before {
+    transform: rotate(135deg);
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer::after {
+    transform: rotate(-135deg);
+    top: -0.4375rem;
+  }
+
+  .menu-item a {
+    padding: 1rem 0;
+    margin-inline: 1rem;
+    border-bottom: 0.0625rem solid #f3f3f2;
+  }
+
+  .label-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #f3f3f2;
+    padding-block: 1rem;
+    cursor: pointer;
+  }
+
+  .hamburguer {
+    border-top: 0.125rem solid;
+    width: 1.125rem;
+  }
+
+  .hamburguer::before,
+  .hamburguer::after {
+    content: "";
+    display: block;
+    width: 1.25rem;
+    height: 0.125rem;
+    background: currentColor;
+    margin-top: 0.3125rem;
+    position: relative;
+    transition: 0.3s;
+  }
+}
+
 /* Path: termos-de-uso.html */
 
 .termos-de-uso {
@@ -556,6 +875,79 @@ header p {
 .termos h3 {
   color: #000200;
   margin: 0;
+}
+
+/* Responsive Termos de uso Mobile */
+
+/* Responsive Menu */
+
+@media (max-width: 700px) {
+  .header-menu {
+    display: block;
+    position: absolute;
+    top: 4.6875rem;
+    left: 0;
+    padding: 0;
+    background: #000200;
+    text-align: center;
+    width: 100%;
+    height: 0;
+    z-index: 1;
+    transition: 0.5s;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+
+  .checkbox:checked ~ .header-menu {
+    height: calc(100vh - 4.6875rem);
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer {
+    border-top-color: transparent;
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer::before {
+    transform: rotate(135deg);
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer::after {
+    transform: rotate(-135deg);
+    top: -0.4375rem;
+  }
+
+  .menu-item a {
+    padding: 1rem 0;
+    margin-inline: 1rem;
+    border-bottom: 0.0625rem solid #f3f3f2;
+  }
+
+  .label-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #f3f3f2;
+    padding-block: 1rem;
+    cursor: pointer;
+  }
+
+  .hamburguer {
+    border-top: 0.125rem solid;
+    width: 1.125rem;
+  }
+
+  .hamburguer::before,
+  .hamburguer::after {
+    content: "";
+    display: block;
+    width: 1.25rem;
+    height: 0.125rem;
+    background: currentColor;
+    margin-top: 0.3125rem;
+    position: relative;
+    transition: 0.3s;
+  }
 }
 
 /* Path: politica-de-privacidade.html */
@@ -587,4 +979,77 @@ header p {
 .politica h3 {
   color: #000200;
   margin: 0;
+}
+
+/* Responsive Política de Privacidade Mobile */
+
+/* Responsive Menu */
+
+@media (max-width: 700px) {
+  .header-menu {
+    display: block;
+    position: absolute;
+    top: 4.6875rem;
+    left: 0;
+    padding: 0;
+    background: #000200;
+    text-align: center;
+    width: 100%;
+    height: 0;
+    z-index: 1;
+    transition: 0.5s;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+
+  .checkbox:checked ~ .header-menu {
+    height: calc(100vh - 4.6875rem);
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer {
+    border-top-color: transparent;
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer::before {
+    transform: rotate(135deg);
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer::after {
+    transform: rotate(-135deg);
+    top: -0.4375rem;
+  }
+
+  .menu-item a {
+    padding: 1rem 0;
+    margin-inline: 1rem;
+    border-bottom: 0.0625rem solid #f3f3f2;
+  }
+
+  .label-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #f3f3f2;
+    padding-block: 1rem;
+    cursor: pointer;
+  }
+
+  .hamburguer {
+    border-top: 0.125rem solid;
+    width: 1.125rem;
+  }
+
+  .hamburguer::before,
+  .hamburguer::after {
+    content: "";
+    display: block;
+    width: 1.25rem;
+    height: 0.125rem;
+    background: currentColor;
+    margin-top: 0.3125rem;
+    position: relative;
+    transition: 0.3s;
+  }
 }
