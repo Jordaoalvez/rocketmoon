@@ -535,7 +535,7 @@ header p {
   }
 
   .titulo-secao {
-    padding-top: 0;
+    padding-top: 1rem;
   }
 
   .blocks {
@@ -712,6 +712,12 @@ header p {
 }
 
 /* Responsive Equipe Mobile */
+@media (max-width: 800px) {
+  .bloco {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+}
 
 /* Responsive Menu */
 
