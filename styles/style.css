@@ -74,6 +74,11 @@ body {
   text-decoration: none;
 }
 
+.menu-item-footer a:hover {
+  color: #fdad00;
+  transition: 700ms;
+}
+
 a {
   color: #f3f3f2;
   text-decoration: none;
@@ -104,17 +109,18 @@ button {
     rgba(253, 173, 0, 0.2) 100%
   );
   border-radius: 6px;
-  transition: 0.7s ease-in-out;
+  transition: 0.7s;
 }
 
 button:hover {
   background: radial-gradient(
     100% 1836.73% at 0% 51.02%,
-    #fdad00 20%,
-    rgba(253, 173, 0, 0.2) 100%
+    #fdad00 0%,
+    rgba(253, 173, 0, 0.2) 70%
   );
   border-radius: 6px;
   cursor: pointer;
+  opacity: 1;
 }
 
 h1 {
