@@ -277,6 +277,10 @@ footer {
     padding: 20px 40px;
   }
 
+  .logo {
+    max-width: 200px;
+  }
+
   .header-menu {
     display: block;
     position: absolute;
@@ -495,6 +499,40 @@ header p {
 }
 
 /* Responsive Roadmap Mobile */
+
+@media (max-width: 800px) {
+  .block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: static !important;
+    width: 220px;
+  }
+
+  .titulo-secao {
+    padding-top: 0;
+  }
+
+  .blocks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline {
+    width: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .block::before {
+    display: none;
+  }
+
+  .blocks::before {
+    display: none;
+  }
+}
 
 /* Responsive Menu */
 
