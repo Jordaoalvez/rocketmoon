@@ -864,6 +864,37 @@ header p {
 
 /* Responsive Contato Mobile */
 
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+
+  body {
+    background-color: #111110;
+  }
+
+  .contato {
+    justify-content: flex-start;
+    width: 0 auto;
+    height: fit-content;
+    margin-bottom: 200px;
+  }
+
+  .form {
+    padding: 2rem;
+  }
+
+  .form-img {
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
+
+  .form-header {
+    margin-bottom: 2rem;
+  }
+}
+
 /* Responsive Menu */
 
 @media (max-width: 800px) {
